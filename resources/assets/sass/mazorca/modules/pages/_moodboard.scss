@@ -1,0 +1,45 @@
+.moodboard {
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+
+	&__container {
+		margin-left: auto;
+		margin-right: auto;
+		// max-width: 600px;
+		width: 100%;
+		text-align: center;
+
+		& > span:first-child  {
+			width: 100% !important;
+			max-width: 1200px !important;
+
+			& > span:nth-child(2)   {
+		   	height: auto !important;
+		   }
+		}
+
+
+	}
+	&__title {
+		text-transform: uppercase;
+    	margin-bottom: 20px;
+		text-align: center;
+		@extend %text;
+	}
+	&__description {
+    	margin-bottom: 20px;
+		text-align: center;
+		font-size: 18px;
+		@extend %text;
+	}
+	&__item {
+		width: calc(100% / 4);
+		padding: 0 10px;
+		display: inline-block;
+		margin-bottom: 30px;
+		@include under(md) { width: calc(100% / 3); }
+		@include under(sm) { width: calc(100% / 2); }
+		@include under(xs) { width: 100%; }
+	}
+}

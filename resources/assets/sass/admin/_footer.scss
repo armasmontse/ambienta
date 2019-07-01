@@ -1,0 +1,30 @@
+.row {
+    .footer {
+        color: #fff;
+        width: 100%;
+        bottom: 0;
+        padding: 8px 0;
+        position: absolute;
+        font-size: 12px;
+        margin-top: 0;
+        border-top: 1px solid #eceff1;
+        background-color: #222222;
+        &__copyright {
+            color: #fff;
+            background-color: initial;
+        }
+        &__container {
+            line-height: 48px;
+        }
+        &__logo {
+            width: 120px;
+            height: auto;
+            margin-top: 14px;
+        }
+        &__link {
+            color: #fff;
+            font-weight: 300;
+            text-decoration: underline;
+        }
+    }
+}

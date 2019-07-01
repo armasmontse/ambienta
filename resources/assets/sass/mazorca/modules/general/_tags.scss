@@ -1,0 +1,22 @@
+.tags {
+	margin: 20px 0;
+	text-align: center;
+
+	&--item {
+		font-size: 14px;
+		cursor: pointer;
+		text-transform: uppercase;
+		border-bottom: 1px solid c(font);
+
+		&:not(:last-child) {
+			margin-right: 10px;
+			&:after { 
+				content: ', '; 
+				display: inline-block;
+				margin-right: -4px;
+				border-bottom: none;
+				text-decoration: none;
+			}
+		}
+	}
+}

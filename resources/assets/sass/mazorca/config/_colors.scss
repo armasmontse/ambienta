@@ -1,0 +1,15 @@
+$colors: (
+	base:	#FFFFFF,
+	font:	#111111,
+	white:	#FFFFFF,
+	gray:	#333333,
+);
+
+@function c($color:base) {
+	@return map-get($colors, $color);
+}
+
+$colorForeground: c();
+$colorBackground: c(white);
+$colorFeatured: c(azul);
+$colorError: #8A1010;

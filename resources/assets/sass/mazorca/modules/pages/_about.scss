@@ -1,0 +1,81 @@
+.about {
+	text-align: center;
+	padding-bottom: 80px;
+	@include under(sm) { padding-bottom: 50px; }
+
+	&__slider {
+		width: 100%;
+		height: 600px;
+		overflow: hidden;
+		margin-bottom: 50px;
+		background-color: c(font);
+		@include under(md) { height: 520px; }
+		@include under(sm) { margin-bottom: 40px; height: 350px; }
+		@include under(xs) { height: 300px; }
+		&--slide {
+			width: 100%;
+			height: 620px !important;
+			@include bg-cover;
+			@include under(md) { height: 520px !important; }
+			@include under(sm) { height: 350px !important; }
+			@include under(xs) { height: 300px !important; }
+		}
+	}
+
+	&__col-1-2 {
+		width: calc((100% / 2) - 20px);
+		height: auto;
+		@include under(sm) {
+			width: 100%;
+			padding: 40px;
+		}
+	}
+	&--wrap {
+		@include under(sm) { padding: 0; }
+		&--row {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	&--ttl {
+		@extend %title;
+		margin-bottom: 50px;
+		@include under(sm) {
+			margin-top: 50px;
+		}
+	}
+
+	&--sub {
+		@extend %subtitle;
+		width: 100%;
+		max-width: 600px;
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+
+	&--txt {
+		@extend %text;
+		width: 100%;
+		max-width: 780px;
+		margin: 0 auto;
+		text-align: left;
+		&--no-mw {
+			max-width: 1160px;
+		}
+	}
+	&__content {
+		padding-bottom: 50px;
+		@include under(sm) {
+			padding: 40px;
+		}
+	}
+	&__excerpt {
+		padding-top: 50px;
+		@include under(sm) {
+			padding: 40px;
+		}
+	}
+}

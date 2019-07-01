@@ -1,0 +1,49 @@
+%title {
+	font-size: 50px;
+	font-family: f(bold);
+	margin-bottom: 30px;
+	@include under(sm) { font-size: 32px; }
+}
+
+%text {
+	font-size: 22px;
+	font-family: f(medium);
+	@include under(sm) { font-size: 20px; }
+	& > div { margin-bottom: 20px; }
+}
+
+%subtitle {
+	font-size: 30px;
+	font-style: italic;
+	font-family: f(bold);
+	@include under(sm) { font-size: 23px; }
+	& > div { margin-bottom: 20px; }
+}
+
+%grid-title {
+	width: 100%;
+	font-size: 20px;
+	text-align: center;
+	font-family: f(bold);
+	margin-bottom: 30px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-decoration: none;
+}
+
+%title-description {
+	@extend %title;
+	font-family: f(inputs);
+	font-style: italic;
+}
+
+%title-img {
+	@extend %title;
+	color: c(beige);
+}
+
+%title-bill {
+	@extend %title;
+	font-size: 13px;
+	color: c(brown);
+}

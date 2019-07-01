@@ -1,0 +1,126 @@
+.collections {
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+
+	&__main {
+		width: 50%;
+		padding-left: 10px;
+		padding-right: 20px;
+		margin-bottom: 50px;
+		@include under(md) {
+			width: 100%;
+			padding-right: 10px;
+		}
+		@include under(sm) {
+			padding: 0;
+		}
+
+		&--img { @include bg-cover; }
+		&--head {
+			color: c(white);
+			cursor: pointer;
+			height: 720px;
+			display: flex;
+			padding: 0 10%;
+			text-align: center;
+			flex-direction: column;
+			justify-content: center;
+			background-color: rgba(0,0,0,0.5);
+			@include ease-transition;
+			@include under(md) { height: 480px; }
+			@include under(sm) { height: 400px; }
+			&:hover { background-color: rgba(0,0,0,0.2); }
+		}
+		&--ttl { @extend %title;
+		 text-decoration: none;
+	 }
+		&--sub { @extend %text; font-style: italic; font-family: f(bold); margin-bottom: 20px; }
+		&--txt {
+			@extend %text;
+			padding: 0 20px;
+			text-align: center;
+		}
+	}
+
+	&__sidebar {
+		&-no-hili {
+			width: 100%;
+		}
+		width: 50%;
+		font-size: 0;
+		padding-left: 10px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		@include under(md) {
+			width: 100%;
+			padding-left: 0;
+		}
+	}
+
+	&__item {
+		width: calc(100% / 2);
+		padding: 0 10px;
+		//display: inline-block;
+		margin-bottom: 30px;
+		@include under(md) { width: calc(100% / 4); }
+		@include under(sm) { width: calc(100% / 2); }
+		@include under(xs) { width: 100%; }
+		&-no-hili {
+			width: calc(100% / 2);
+			padding: 0 10px;
+			//display: inline-block;
+			margin-bottom: 30px;
+			@include under(md) { width: calc(100% / 3); }
+			@include under(sm) { width: calc(100% / 2); }
+			@include under(sm) { width: 100%; }
+		}
+		&--img { @include bg-cover; }
+		&--ttl {
+			@extend %title;
+			text-decoration: none;
+			width: 100%;
+			height: 315px;
+			color: c(white);
+			cursor: pointer;
+			display: flex;
+			padding: 0 20px;
+			font-size: 30px;
+			text-align: center;
+			margin-bottom: 0;
+			flex-direction: column;
+			justify-content: center;
+			background-color: rgba(0,0,0,0.4);
+			@include ease-transition;
+			@include under(md) { height: 260px; }
+			@include under(sm) { height: 260px; }
+			&:hover { background-color: rgba(0,0,0,0.2); }
+		}
+	}
+
+	&-single {
+		&__sidebar {
+			width: 50%;
+			padding-left: 50px;
+			@include under(md) {
+				width: 100%;
+				padding: 0 20px;
+			}
+			&--ttl {
+				@extend %text;
+				text-transform: uppercase;
+			}
+			&--sub {
+				@extend %text;
+			}
+			&--txt {
+				font-size: 20px;
+				& > div {
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+
+}

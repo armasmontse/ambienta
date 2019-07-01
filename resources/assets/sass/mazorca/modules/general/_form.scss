@@ -1,0 +1,70 @@
+.form {
+	margin-bottom: 30px;
+
+	&__row {
+		display: flex;
+		& > * { flex-grow: 1; }
+		&--label { 
+			white-space: nowrap;
+			padding-top: 10px;
+			padding-right: 10px;
+		}
+	}
+
+	&--half {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		& > .form__row { 
+			width: calc(50% - 10px);
+			@include under(sm) {
+				width: 100%;
+			}
+		}
+	}
+
+	&--input,
+	&--textarea {
+		color: c(font);
+		padding: 5px;
+		font-size: 15px;
+		text-align: center;
+		line-height: 14px;
+		font-family: f(book);
+		border-top: 0;
+		border-left: 0;
+		border-right: 0;
+		border-bottom: 1px solid c(font);
+		margin-bottom: 15px;
+		border-radius: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		&:focus { background-color: #eee; }
+		&::placeholder { color: #aaa;}
+	}
+
+	&--textarea {
+		text-align: left;
+		line-height: 1.5;
+	}
+
+	&--submit {
+		color: c(white);
+		border: none;
+		cursor: pointer;
+		padding: 10px 16px;
+		position: relative;
+		font-size: 14px;
+		font-family: f(bold);
+		border-radius: none;
+		text-transform: uppercase;
+		background-color: c(font);
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		&:active {
+			top: 1px;
+		}
+	}
+}

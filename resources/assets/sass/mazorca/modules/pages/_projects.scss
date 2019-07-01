@@ -1,0 +1,57 @@
+.projects {
+	padding: 0;
+	position: relative;
+	@include under(lg) { padding: 0 20px; }
+	@include under(sm) { padding-top: 20px; }
+
+	&__item {
+		width: 100%;
+		color: c(white);
+		cursor: pointer;
+		display: block;
+		padding: 9% 23%;
+		text-align: center;
+		background-color: rgba(0,0,0,0.5);
+		@include ease-transition;
+		@include under(sm) { padding: 9% 12%; margin-bottom: 20px; }
+		&:hover { background-color: rgba(0,0,0,0.2); }
+
+		&--ttl { @extend %title; }
+		&--txt { @extend %subtitle; }
+		&--img {
+			margin-bottom: 40px;
+			@include bg-cover;
+			@include under(sm) { margin-bottom: 20px; }
+		}
+	}
+
+	&-single {
+		text-align: center;
+
+		&--wrap { @include under(sm) { padding: 0; } }
+
+		&__cover {
+			width: 100%;
+			height: 0;
+			display: block;
+			padding-top: 58%;
+			margin-bottom: 40px;
+			background-color: c(gray);
+			@include bg-cover;
+		}
+
+		&--ttl { @extend %title; }
+		
+		&--txt { 
+			@extend %text; 
+			width: 100%; max-width: 780px;
+			margin: 0 auto 30px auto;
+		}
+	}
+
+	&__gallery {
+		&--ttl {
+			@extend %grid-title;
+		}
+	}
+}

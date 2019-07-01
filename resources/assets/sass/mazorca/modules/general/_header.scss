@@ -1,0 +1,275 @@
+.header {
+	padding: 50px 0;
+	@include under(sm) {
+		padding: 0;
+	}
+
+	&--wrap {
+		position: relative;
+		padding-top: 30px;
+		@include under(sm) {
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+	}
+
+	&__admin {
+		top: 0;
+		left: 40px;
+		position: absolute;
+		@include under(sm) {
+			display: none;
+		}
+	}
+
+	&__social {
+		top: 0;
+		right: 40px;
+		position: absolute;
+		@include under(sm) {
+			display: none;
+		}
+
+		&--item {
+			cursor: pointer;
+			font-size: 18px !important;
+			margin-left: 30px;
+		}
+	}
+
+	&__logo {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		z-index: 2;
+		display: flex;
+		position: relative;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		@include ease-transition;
+		@include under(sm) {
+			width: 120px;
+			margin: 0;
+			padding: 12px;
+			background-color: c(white);
+		}
+
+		&--container {
+			overflow: hidden;
+			position: relative;
+			@include over(sm) {
+				width: 100%;
+				height: 70px;
+				margin-bottom: 50px;
+				@include ease-transition(0.7s);
+			}
+		}
+
+		&--container.open {
+			@include over(sm) {
+				height: calc(100vh - 80px - 60px);
+				margin-bottom: 20px;
+				background-color: c(font);
+
+				.header__logo--img {
+					filter: invert(100);
+				}
+			}
+		}
+
+		&--img {
+			max-width: 400px;
+			height: 70px;
+			margin: 0 auto;
+			display: inline-block;
+			@include ease-transition(0.7s);
+			@include under(sm) {
+				height: auto;
+			}
+		}
+
+		&--slider {
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 1;
+			position: absolute;
+			background-color: gray;
+		}
+	}
+
+	&__mobile {
+		top: 42px;
+		left: 0;
+		width: 100%;
+		z-index: 2;
+		display: none;
+		position: absolute;
+		flex-wrap: wrap;
+
+		&--btn {
+			color: c(white);
+			cursor: pointer;
+			display: none;
+			padding: 0 12px;
+			font-size: 20px;
+			line-height: 42px;
+			background-color: c(font);
+			@include under(sm) {
+				display: inline-block;
+			}
+		}
+	}
+
+	&__menu {
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		@include under(sm) {
+			top: 42px;
+			z-index: 2;
+			display: none;
+			position: absolute;
+			border-bottom: 1px solid #eee;
+		}
+
+		&.preliminar {
+			justify-content: space-around;
+		}
+
+		&--item {
+			position: relative;
+			font-size: 18px;
+			font-family: f(bold);
+			@include ease-transition;
+			@include under(sm) {
+				width: 100%;
+				color: c(font);
+				cursor: pointer;
+				padding: 12px;
+				display: inline-block;
+				text-align: center;
+				border-top: 1px solid #eee;
+				background-color: c(white);
+
+				&:hover {
+					background-color: #eee;
+				}
+			}
+
+			&.tba {
+				color: #666;
+				cursor: pointer;
+				position: relative;
+
+				&:hover {
+					&:after {
+						display: block;
+						color: #000;
+					}
+				}
+
+				&:after {
+					content: 'PROXIMAMENTE';
+					top: 0;
+					left: 50%;
+					height: 100%;
+					color: #000 !important;
+					display: none;
+					padding: 0 10px;
+					position: absolute;
+					font-size: 12px;
+					line-height: 25px;
+					transform: translateX(-50%);
+					background-color: c(white);
+				}
+			}
+
+			&.current:after {
+				/*content: '';
+				left: 0;
+				bottom: 0px;
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				background-color: c(font);*/
+			}
+
+			&:hover {
+				@include over(sm) {
+					opacity: 1;
+				}
+			}
+
+			& > a {
+				margin: 0 10px;
+			}
+		}
+	}
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	height: 100vh;
+	width: 100%;
+	z-index: 99999999;
+	@include under(sm){
+		padding: 15px;
+	}
+	//background-color: rgba(128,128,128,0.7);
+	&__body{
+		margin: auto;;
+		padding-top: 40px;
+		padding-bottom: 20px;
+		display: table;
+		position: relative;
+		div >div > img{
+			display: table;
+			margin: auto;
+		}
+		div > p{
+			/* margin-top: 20px; */
+font-size: 22px;
+position: absolute;
+/* top: -20px; */
+/* display: table; */
+margin: auto;
+left: 0;
+right: 0;
+bottom: 60px;
+text-align: center;
+font-style: italic;
+		}
+	}
+	&__header{
+		z-index: 10;
+	}
+    &-close{
+		position: absolute;
+        cursor: pointer;
+        z-index: 10;
+		right: 8px;
+		top: 8px;
+		a > img{
+			width: 12px;
+			margin: 10px;
+		}
+	}
+	&-content {
+		box-shadow:0 2px 12px rgba(0, 0, 0, 0.1);
+		width: 430px;
+		background: white;
+		margin: 10% auto 0;
+		position: relative;
+		@include under(sm){
+			width:100%;
+		}
+	}
+}
