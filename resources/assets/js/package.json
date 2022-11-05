@@ -22,7 +22,7 @@
     "vue-truncate": "1.0.0"
   },
   "devDependencies": {
-    "babel-loader": "^5.4.2",
+    "babel-loader": "^9.1.0",
     "cltvo-karma": "1",
     "istanbul-instrumenter-loader": "^2.0.0",
     "jasmine": "^2.99.0",
